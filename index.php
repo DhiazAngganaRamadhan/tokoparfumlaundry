@@ -21,6 +21,13 @@
             <li><a href="produk.php">Produk</a></li>
         </ul>
         </div>
+
+        <!-- Video -->
+        <div class="video-container" style="text-align: center; margin-top: 20px;">
+             <video width="380" height="210" controls autoplay muted loop>
+                 <source src="video/PAGI-DAN-SEPI.mp4" type="video/mp4">
+             </video>
+        </div>
     </header>
 
     <!-- search -->
