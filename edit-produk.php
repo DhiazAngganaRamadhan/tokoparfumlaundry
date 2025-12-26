@@ -5,7 +5,7 @@
         echo '<script>window.location="login.php"</script>';
     }
 
-    $produk = mysqli_query($conn, "SELECT * FROM tb_product WHERE product_id = '".$_GET['id']."' ");
+    $produk = mysqli_query($conn, "SELECT * FROM tb_layanan WHERE product_id = '".$_GET['id']."' ");
     if(mysqli_num_rows($produk) == 0){
         echo '<script>window.location="data-produk.php"</script>';
     }
@@ -30,7 +30,8 @@
             <li><a href="dashboard.php">Dashboard</a></li>
             <li><a href="profil.php">Profil</a></li>
             <li><a href="data-kategori.php">Data Kategori</a></li>
-            <li><a href="data-produk.php">Data Produk</a></li>
+            <li><a href="data-produk.php">Data Layanan</a></li>
+            <li><a href="data-pesanan.php">Data Pesanan</a></li>
             <li><a href="logout.php">Logout</a></li>
         </ul>
         </div>
@@ -39,7 +40,7 @@
     <!-- content -->
     <div class="section">
         <div class="container">
-            <h3>Edit Data Produk</h3>
+            <h3>Edit Data Layanan</h3>
             <div class="box">
                 <form action="" method="POST" enctype="multipart/form-data">
                     <select class="input-control" name="kategori" required>
@@ -111,7 +112,7 @@
                         }
 
                         //query update data produk
-                        $update = mysqli_query($conn, "UPDATE tb_product SET 
+                        $update = mysqli_query($conn, "UPDATE tb_layanan SET 
                                                 category_id = '".$kategori."',
                                                 product_name = '".$nama."',
                                                 product_price = '".$harga."',

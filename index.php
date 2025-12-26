@@ -18,24 +18,20 @@
         <div class="container">
         <h1><a href="index.php">Toko Parfum Laundry</a></h1>
         <ul>
-            <li><a href="produk.php">Produk</a></li>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="tentang-kami.php">Tentang Kami</a></li><!-- Tambahan -->
+            <li><a href="produk.php">Layanan</a></li>
         </ul>
         </div>
 
-        <!-- Video -->
-        <div class="video-container" style="text-align: center; margin-top: 20px;">
-             <video width="380" height="210" controls autoplay muted loop>
-                 <source src="video/PAGI-DAN-SEPI.mp4" type="video/mp4">
-             </video>
-        </div>
     </header>
 
     <!-- search -->
     <div class="search">
         <div class="container">
             <form action="produk.php">
-                <input type="text" name="search" placeholder="Cari Produk">
-                <input type="submit" name="cari" value="Cari Produk">
+                <input type="text" name="search" placeholder="Cari Layanan">
+                <input type="submit" name="cari" value="Cari Layanan">
             </form>
         </div>
     </div>
@@ -66,10 +62,10 @@
     <!-- new product -->
     <div class="section">
         <div class="container">
-            <h3>Produk Terbaru</h3>
+            <h3>Layanan Terbaru</h3>
             <div class="box">
                 <?php
-                    $produk = mysqli_query($conn, "SELECT * FROM tb_product WHERE product_status = 1 ORDER BY product_id DESC LIMIT 4");
+                    $produk = mysqli_query($conn, "SELECT * FROM tb_layanan WHERE product_status = 1 ORDER BY product_id DESC LIMIT 4");
                     if(mysqli_num_rows($produk) > 0){
                         while($p = mysqli_fetch_array($produk)){
                 ?>
@@ -90,7 +86,7 @@
     <!-- footer -->
     <div class="footer">
         <div class="container">
-            <h4>Pemilik Usaha</h4>
+            <h4>Pemilik Jasa</h4>
             <p><?php echo $a->admin_name ?></p>
 
             <h4>Nomor Telpon</h4>

@@ -26,7 +26,8 @@
             <li><a href="dashboard.php">Dashboard</a></li>
             <li><a href="profil.php">Profil</a></li>
             <li><a href="data-kategori.php">Data Kategori</a></li>
-            <li><a href="data-produk.php">Data Produk</a></li>
+            <li><a href="data-produk.php">Data Layanan</a></li>
+            <li><a href="data-pesanan.php">Data Pesanan</a></li>
             <li><a href="logout.php">Logout</a></li>
         </ul>
         </div>
@@ -62,6 +63,11 @@
                                         admin_address = '".$alamat."'
                                         WHERE admin_id = '".$d->admin_id."' ");
                         if($update){
+                            $_SESSION['a_global']->admin_name = $nama;
+                            $_SESSION['a_global']->username = $user;
+                            $_SESSION['a_global']->admin_telp = $hp;
+                            $_SESSION['a_global']->admin_email = $email;
+                            $_SESSION['a_global']->admin_address = $alamat;
                             echo '<script>alert("Ubah data berhasil")</script>';
                             echo '<script>window.location="profil.php"</script>';
                         }else{
@@ -83,7 +89,7 @@
                     if(isset($_POST['ubah_password'])){
 
                         $pass1   = $_POST['pass1'];
-                        $pass2     = $_POST['pass2'];
+                        $pass2   = $_POST['pass2'];
 
                         if($pass2 != $pass1){
                             echo '<script>alert("Konfirmasi Password Baru Tidak Sesuai")</script>';

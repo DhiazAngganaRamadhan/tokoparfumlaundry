@@ -23,7 +23,8 @@
             <li><a href="dashboard.php">Dashboard</a></li>
             <li><a href="profil.php">Profil</a></li>
             <li><a href="data-kategori.php">Data Kategori</a></li>
-            <li><a href="data-produk.php">Data Produk</a></li>
+            <li><a href="data-produk.php">Data Layanan</a></li>
+            <li><a href="data-pesanan.php">Data Pesanan</a></li>
             <li><a href="logout.php">Logout</a></li>
         </ul>
         </div>
@@ -32,7 +33,7 @@
     <!-- content -->
     <div class="section">
         <div class="container">
-            <h3>Data Produk</h3>
+            <h3>Data Layanan</h3>
             <div class="box">
                 <p><a href="tambah-produk.php">Tambah Data</a></p>
                 <table border="1" cellspacing="0" class="table">
@@ -50,7 +51,7 @@
                     <tbody>
                         <?php
                             $no = 1;
-                            $produk = mysqli_query($conn, "SELECT * FROM tb_product LEFT JOIN tb_category USING (category_id) ORDER BY product_id DESC");
+                            $produk = mysqli_query($conn, "SELECT * FROM tb_layanan LEFT JOIN tb_category USING (category_id) ORDER BY product_id DESC");
                             if(mysqli_num_rows($produk) > 0){
                             while($row = mysqli_fetch_array($produk)){
                         ?>

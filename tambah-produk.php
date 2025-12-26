@@ -24,7 +24,8 @@
             <li><a href="dashboard.php">Dashboard</a></li>
             <li><a href="profil.php">Profil</a></li>
             <li><a href="data-kategori.php">Data Kategori</a></li>
-            <li><a href="data-produk.php">Data Produk</a></li>
+            <li><a href="data-produk.php">Data Layanan</a></li>
+            <li><a href="data-pesanan.php">Data Pesanan</a></li>
             <li><a href="logout.php">Logout</a></li>
         </ul>
         </div>
@@ -33,7 +34,7 @@
     <!-- content -->
     <div class="section">
         <div class="container">
-            <h3>Tambah Data Produk</h3>
+            <h3>Tambah Data Layanan</h3>
             <div class="box">
                 <form action="" method="POST" enctype="multipart/form-data">
                     <select class="input-control" name="kategori" required>
@@ -46,7 +47,7 @@
                         <?php } ?>
                     </select>
 
-                    <input type="text" name="nama" class="input-control" placeholder="Nama Produk" required>
+                    <input type="text" name="nama" class="input-control" placeholder="Nama Layanan" required>
                     <input type="text" name="harga" class="input-control" placeholder="Harga" required>
                     <input type="file" name="gambar" class="input-control" required>
                     <textarea class="input-control" name="deskripsi" placeholder="Deskripsi"></textarea><br>
@@ -90,7 +91,7 @@
                             //proses upload file sekaligus insert ke database
                             move_uploaded_file($tmp_name, './produk/'.$newname);
 
-                            $insert = mysqli_query($conn, "INSERT INTO tb_product VALUES (
+                            $insert = mysqli_query($conn, "INSERT INTO tb_layanan VALUES (
                                         null,
                                         '".$kategori."',
                                         '".$nama."',
